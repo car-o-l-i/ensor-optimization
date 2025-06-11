@@ -12,6 +12,7 @@ class SensorOptimizer:
         self.solution = None
         self.objective_value = 0
     
+    //*************** MÉTODO DE PROGRAMACIÓN LINEAL ***************//
     def solve_linear_programming(self) -> Dict[int, List[int]]:
         """
         Résout le problème en utilisant la programmation linéaire.
@@ -56,7 +57,9 @@ class SensorOptimizer:
         self.solution = solution
         self.objective_value = value(prob.objective)
         return solution
+    //*************** FIN PROGRAMACIÓN LINEAL ***************//
     
+    //*************** MÉTODO DE RECOCIDO SIMULADO ***************//
     def solve_simulated_annealing(self, initial_temp: float = 100.0, 
                                 cooling_rate: float = 0.95,
                                 iterations: int = 1000) -> Dict[int, List[int]]:
@@ -85,6 +88,7 @@ class SensorOptimizer:
         self.solution = best_solution
         self.objective_value = best_value
         return best_solution
+    //*************** FIN RECOCIDO SIMULADO ***************//
     
     def _generate_initial_solution(self) -> Dict[int, List[int]]:
         """Génère une solution initiale valide."""
